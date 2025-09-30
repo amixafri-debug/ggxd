@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  metrics-service:
+    build: ./metrics-service
+    container_name: metrics-service
+    ports:
+      - "8000:8000"
+    environment:
+      - API_KEY=${API_KEY} 
+    volumes:
+      - ./metrics-service/data:/app/data
+    restart: unless-stopped

@@ -1,0 +1,48 @@
+#speed-control {
+    position: absolute;  
+    padding: .4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(56, 55, 55, 0.4);
+    z-index: 10;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(181, 194, 0);
+    
+}
+
+.clock{
+    color: rgb(181, 194, 0);
+}
+
+.control-row{
+    display: flex;
+    flex-direction: row;
+    gap: 10px
+}
+
+.pause-btn {
+  color: rgb(181, 194, 0);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 2.4rem;
+}
+
+.pause-btn.playing {
+  background: #0b427e;   /* azul cuando está en play */
+}
+
+.pause-btn.paused {
+  background: #771111;   /* rojo cuando está parado */
+}
+
+.row-buttons {
+  display: grid;
+  grid-auto-flow: column;   
+  grid-auto-columns: 1fr;  
+  gap: 0.5rem;
+}

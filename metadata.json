@@ -1,0 +1,5 @@
+{
+  "name": "Pleiades Protocol",
+  "description": "An astrophysics-style dashboard for analyzing the potential impact of Near-Earth Objects (NEOs) on Earth by calculating comprehensive metrics from orbital parameters to ground effects.",
+  "requestFramePermissions": []
+}

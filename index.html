@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pleiades Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Orbitron', sans-serif;
+      }
+      .text-glow {
+        text-shadow: 0 0 8px rgba(56, 189, 248, 0.4), 0 0 20px rgba(56, 189, 248, 0.3);
+      }
+      .box-glow {
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.2), 0 0 5px rgba(56, 189, 248, 0.3);
+      }
+      .custom-info-window {
+        background-color: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        border-radius: 8px;
+        padding: 16px;
+        color: white;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.2), 0 0 5px rgba(56, 189, 248, 0.3);
+        max-width: 250px;
+        transform: translate(-50%, -120%); /* Position above the marker */
+      }
+      .custom-info-window strong {
+        color: #7dd3fc; /* sky-200 */
+      }
+      .map-legend {
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+        background-color: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        border-radius: 8px;
+        padding: 12px;
+        z-index: 10;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+       .legend-item:last-child {
+        margin-bottom: 0;
+      }
+      .legend-color-box {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "@react-google-maps/api": "https://aistudiocdn.com/@react-google-maps/api@^2.20.7",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

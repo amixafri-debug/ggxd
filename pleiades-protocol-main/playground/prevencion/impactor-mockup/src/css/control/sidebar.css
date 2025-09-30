@@ -1,0 +1,16 @@
+.sidebar {
+    flex: 1;
+    padding: 1rem;
+    border-right: 2px solid var(--color-border);
+    background-color: var(--color-primary);
+    --font-size-sidebar-title: 1.6rem;
+    --font-size-sidebar-info: 1rem;
+}
+
+.sidebar > * {
+    font-size: var(--font-size-sidebar-info);
+}
+
+.sidebar > .sidebar-title {
+    font-size: var(--font-size-sidebar-title);
+}
