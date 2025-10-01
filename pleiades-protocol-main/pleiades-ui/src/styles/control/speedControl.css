@@ -1,119 +1,60 @@
-/* pleiades-protocol-main/pleiades-ui/src/styles/control/speedControl.css */
-
-/* Importamos la fuente que añadimos en index.html */
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap');
-
-/* Paleta de colores Neon-Futurista */
-:root {
-  --neon-green: #00ffc3;
-  --dark-background: rgba(0, 20, 15, 0.6);
-  --glow-color: rgba(0, 255, 195, 0.5);
-  --border-color: rgba(0, 255, 195, 0.3);
-  --text-primary: #e5fffa;
-  --text-secondary: #a3fffb;
-}
-
-.telemetry-hud {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 20px;
-  
-  font-family: 'Exo 2', sans-serif; /* ¡Nueva fuente! */
-  
-  background: var(--dark-background);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  
-  padding: 10px 25px;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
-  
-  /* Efecto de brillo sutil */
-  box-shadow: 0 0 15px var(--glow-color), 0 0 30px var(--glow-color) inset;
-  
-  min-width: 600px;
-  color: var(--text-primary);
-}
-
-.hud-column {
+/*
+ * Nueva UI para SpeedControl
+ * Estilo moderno y acorde a los paneles de la aplicación
+ */
+.speed-control-panel {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: white;
+  transition: all 0.3s ease;
 }
 
-.date-telemetry {
-  align-items: flex-start;
-}
-
-.speed-telemetry {
-  align-items: flex-end;
-}
-
-.hud-label {
-  font-size: 0.8em;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--neon-green);
-  text-shadow: 0 0 5px var(--glow-color); /* Brillo en el texto */
-}
-
-.hud-value {
-  font-size: 1.4em;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.2;
-}
-
-.controls-center {
+.speed-control-buttons {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.hud-button {
-  background: transparent;
-  border: 2px solid var(--border-color);
-  color: var(--neon-green);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5em;
+.speed-control-panel button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  /* Efecto de brillo en los botones */
-  text-shadow: 0 0 8px var(--glow-color);
-  box-shadow: 0 0 10px var(--border-color) inset;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.hud-button:hover {
-  background-color: var(--glow-color);
-  color: #000;
-  transform: scale(1.1) translateY(-2px);
-  box-shadow: 0 0 20px var(--glow-color);
-  border-color: var(--neon-green);
+.speed-control-panel button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
-.hud-button:active {
-  transform: scale(1.05);
+.speed-control-panel button:active {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
-.hud-button.play-pause {
-  width: 65px;
-  height: 65px;
-  font-size: 2em;
-  background: var(--neon-green);
-  border: none;
-  color: #000;
-  box-shadow: 0 0 25px var(--glow-color);
-}
-
-.hud-button.play-pause:hover {
-  background-color: #fff;
-  color: #000;
-  box-shadow: 0 0 35px #fff;
+.date-display {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  min-width: 180px;
+  text-align: center;
 }
