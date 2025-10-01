@@ -26,8 +26,8 @@ function getZoomFromDistance(dist) {
   if (dist < 1.03) return 8
   if (dist < 1.07) return 7
   if (dist < 1.14) return 6
-  if (dist < 1.3) return 5
-  if (dist < 1.7) return 4
+  if (dist < 8) return 5
+  //if (dist < 1.7) return 4
   return MIN_ZOOM
 }
 
@@ -52,6 +52,7 @@ function loadTileImage(z, x, y) {
       resolve(null)
     }
     img.src = `https://api.maptiler.com/tiles/satellite-v2/${z}/${xWrapped}/${yClamped}.jpg?key=${MAPTILER_API_KEY}`
+    console.log(img.src)
   })
 }
 
@@ -149,10 +150,13 @@ function clearMesh(earthGroup, key, mesh) {
 
 // Update visible tile meshes
 export async function updateTileMeshes(camera, earthGroup, radius = EARTH_RADIUS) {
-  const dist = camera.position.length()
+  const earthPosition = new THREE.Vector3();
+  earthGroup.getWorldPosition(earthPosition);
+  //Get earth position and calculate distance from camera. Then get zoom level
+  const dist = new THREE.Vector3().subVectors(camera.position, earthPosition).length()
   const zoom = getZoomFromDistance(dist)
-  console.log(`Camera distance: ${dist}, Zoom level: ${zoom}`)
-  console.log('Mesh cache size: ', meshCache.size)
+  //console.log(`Camera distance: ${dist}, Zoom level: ${zoom}`)
+  //console.log('Mesh cache size: ', meshCache.size)
 
   if (zoom == MIN_ZOOM) {
     //Means no update is needed, just base tiles are shown and old meshes removed
